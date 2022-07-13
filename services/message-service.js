@@ -42,3 +42,4 @@ export async function getProfile() {
 
     return response.data;
 }
+
