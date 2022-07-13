@@ -1,9 +1,11 @@
+
 import { getUser, signOut } from '../services/auth-service.js';
 import { protectPage } from '../utils.js';
 import { getProfile } from '../services/message-service.js';
 import createUser from '../components/User.js';
 import createProfileUpdate from '../components/UpdateProfile.js';
 import { updateProfile } from '../services/message-service.js';
+
 
 // State
 let user = null;
