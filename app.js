@@ -1,7 +1,7 @@
 import { getUser, signOut } from './services/auth-service.js';
 import { checkProfile, protectPage } from './utils.js';
 import createUser from './components/User.js';
-import { getProfile } from './services/message-service.js';
+import { getMessages, getProfile } from './services/message-service.js';
 
 // State
 let user = null;
@@ -16,7 +16,7 @@ async function handlePageLoad() {
     profile = await getProfile();
     checkProfile(profile);
     
-    messages = await getPosts();
+    messages = await getMessages();
 
     display();
 }
