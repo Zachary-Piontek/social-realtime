@@ -1,7 +1,7 @@
-import { getUser, signOut, getProfile } from './services/auth-service.js';
-import { protectPage } from './utils.js';
-import createUser from './components/User.js';
-import createProfile from '../components/CreateProfile.js';
+import { getUser, signOut, getProfile } from '../services/auth-service.js';
+import { protectPage } from '../utils.js';
+import createUser from '../components/User.js';
+import { createProfile } from '../components/CreateProfile.js';
 
 // State
 let user = null;
