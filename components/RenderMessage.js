@@ -22,18 +22,3 @@ export function renderMessages(root) {
     };
 }
 
-export default function createNewMessage(form, { handleNewMessage }) {
-
-    form.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        const formData = new FormData(form);
-        await handleNewMessage(
-            formData.get('text'),
-        );
-
-        form.reset;
-
-    });
-
-    return form;
-}
