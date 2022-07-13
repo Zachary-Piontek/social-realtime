@@ -17,6 +17,7 @@ async function handlePageLoad() {
     protectPage(user);
 
     profile = await getProfile();
+    console.log(profile);
 
     display();
 }
@@ -25,7 +26,12 @@ async function handleSignOut() {
     signOut();
 }
 
-async function handleProfileUpdate() {
+async function handleProfileUpdate(username) {
+    const profile = {
+        id: user.id,
+        username,
+    };
+
     await updateProfile(profile);
     display();
 }
