@@ -1,5 +1,4 @@
-Social Media Chatroom
-=======
+
 ## The Golden Rule:
 
 🦸 🦸‍♂️ `Stop starting and start finishing.` 🏁
@@ -9,6 +8,7 @@ Social Media Chatroom
 1. Keep it Simple Simon (KISS)
 
 ## Making a plan
+
 
 1. Make a drawing of your app. **Simple "wireframes"**
 1. Once you have a drawing, **name the HTML elements** you'll need to realize your vision\*\*
