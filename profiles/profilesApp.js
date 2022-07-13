@@ -10,6 +10,8 @@ async function handlePageLoad() {
     user = getUser();
     protectPage(user);
 
+    
+
     display();
 }
 

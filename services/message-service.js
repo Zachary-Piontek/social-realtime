@@ -29,3 +29,16 @@ export async function getMessages() {
 
     return response.data;
 }
+
+
+export async function getProfile() {
+    const response = await client
+        .from('user_profiles')
+        .select(`
+        id,
+        profile_name`)
+        .eq()
+        .single();
+
+    return response.data;
+}
