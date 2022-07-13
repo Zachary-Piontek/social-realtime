@@ -1,3 +1,5 @@
+Social Media Chatroom
+=======
 ## The Golden Rule:
 
 🦸 🦸‍♂️ `Stop starting and start finishing.` 🏁
@@ -20,3 +22,4 @@
 1. Once we know the _why_ of elements, state, and events -- think about how to implement the "Why" as a "How"
 1. Think about how to **validate each of your features** according to a Definition of Done
 1. Consider what features **_depend_ on what other features**. Use this dependency logic to figure out what order to complete tasks.
+
