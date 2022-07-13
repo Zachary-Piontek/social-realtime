@@ -12,7 +12,9 @@ async function handlePageLoad() {
     user = getUser();
     protectPage(user);
 
+
     profile = await getProfile();
+
 
     display();
 }
