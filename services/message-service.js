@@ -31,15 +31,22 @@ export async function getMessages() {
 }
 
 
-export async function getProfile() {
+export async function getProfile(id) {
     const response = await client
-        .from('user_profiles')
+        .from('user-profiles')
         .select(`
         id,
         profile_name`)
-        .eq()
+        .eq('id', id)
         .single();
 
     return response.data;
 }
 
+export async function updateProfile(profile) {
+    const response = await client
+        .from('user-profiles')
+        .upsert(profile);
+
+    return response.data;
+}
