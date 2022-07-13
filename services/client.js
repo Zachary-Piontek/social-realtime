@@ -5,3 +5,11 @@ const SUPABASE_KEY =
 
 
 export const client = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+
+export async function createProfile(profile) {
+    const response = await client
+        .from('user-profiles')
+        .upsert(profile);
+
+    return response;
+}

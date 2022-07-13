@@ -12,9 +12,7 @@ async function handlePageLoad() {
     user = getUser();
     protectPage(user);
 
-
     profile = await getProfile();
-
 
     display();
 }
@@ -29,7 +27,7 @@ const User = createUser(
     { handleSignOut }
 );
 
-const Profile = createProfile(document.querySelector(''));
+const Profile = createProfile(document.getElementById('profile-form'));
 
 function display() {
     User({ user });
