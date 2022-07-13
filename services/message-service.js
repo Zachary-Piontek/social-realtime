@@ -1,3 +1,4 @@
+import { getUser } from './auth-service.js';
 import { client } from './client.js';
 
 export async function newMessage(text) {
@@ -31,22 +32,26 @@ export async function getMessages() {
 }
 
 
-export async function getProfile(id) {
+export async function getProfile() {
+    const user = getUser();
+
     const response = await client
         .from('user-profiles')
         .select(`
         id,
         profile_name`)
-        .eq('id', id)
-        .single();
+        .eq('id', user.id);
 
     return response.data;
+
 }
 
 export async function updateProfile(profile) {
     const response = await client
         .from('user-profiles')
-        .upsert(profile);
+        .upsert(profile)
+        .eq('id', profile.id)
+        .single();
 
     return response.data;
 }
