@@ -7,7 +7,7 @@ function Message({ message }) {
     p.textContent = message.content;
 
     const username = document.createElement('h3');
-    username.textContent = message.user.profile_name;
+    username.textContent = message.username;
 
     li.append(p, username);
     
