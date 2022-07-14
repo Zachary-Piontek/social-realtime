@@ -17,16 +17,12 @@ async function handlePageLoad() {
     profile = await getProfile();
     checkProfile(profile);
 
-    console.log(profile);
-
-    
     messages = await getMessages();
-    console.log(messages);
     
-
     liveUpdate(mess => {
         messages.unshift(mess);
         display();
+        console.log(profile);
     });
 
     display();
