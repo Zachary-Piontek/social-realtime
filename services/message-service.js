@@ -20,10 +20,7 @@ export async function getMessages() {
         id,
         created_at,
         content,
-        user:user-profiles(
-           id,
-           profile_name 
-        )
+        profile_id,
         `)
         .order('created_at', { ascending: false });
         //.limit(10) in case loading all messages causes a problem

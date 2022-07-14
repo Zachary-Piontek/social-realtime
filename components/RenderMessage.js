@@ -9,6 +9,8 @@ function Message({ message }) {
     p.textContent = message.content;
 
     li.append(p);
+
+    return li;
 }
 
 export function renderMessages(root) {
