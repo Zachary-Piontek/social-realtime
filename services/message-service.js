@@ -20,14 +20,14 @@ export async function getMessages() {
         id,
         created_at,
         content,
-        user:user-profiles (
+        user:user-profiles(
            id,
            profile_name 
         )
         `)
-        .order('created_at', { ascending: false })
+        .order('created_at', { ascending: false });
         //.limit(10) in case loading all messages causes a problem
-        ;
+        
 
     return response.data;
 }
@@ -55,4 +55,16 @@ export async function updateProfile(profile, id) {
         .single();
 
     return response.data;
+}
+
+export async function liveUpdate(listener) {
+    client
+        .from('messages')
+        .on('INSERT', async (payload) => {
+            const mess = payload.new;
+            const user = await getProfile(mess.profile_id);
+            mess.user = user;
+            listener(mess);
+        })
+        .subscribe();
 }
