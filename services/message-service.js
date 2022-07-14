@@ -40,13 +40,14 @@ export async function getProfile() {
         .select(`
         id,
         profile_name`)
-        .eq('id', user.id);
+        .eq('user_id', user.id)
+        .single();
 
     return response.data;
-
 }
 
 export async function updateProfile(profile) {
+    console.log(profile);
     const response = await client
         .from('user-profiles')
         .upsert(profile)
