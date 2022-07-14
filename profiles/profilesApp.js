@@ -17,9 +17,8 @@ async function handlePageLoad() {
     protectPage(user);
 
     profile = await getProfile() || [];
-    
-
     console.log(profile);
+    console.log(profile.id);
 
     display();
 }
@@ -29,18 +28,15 @@ async function handleSignOut() {
 }
 
 async function handleProfileUpdate(username) {
-    display();
-    console.log(profile.id);
     const profileInput = {
         id: profile.id,
         profile_name: username,
         user_id: user.id,
     };
 
-    location.replace('/');
-
-    await updateProfile(profileInput);
     console.log(profileInput);
+    await updateProfile([profileInput]);
+    display();
 }
 
 // Components 

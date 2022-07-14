@@ -40,11 +40,10 @@ export async function getProfile() {
         .select(`*`)
         .eq('user_id', user.id)
         .single();
-    if (response.data === undefined) {
-        return [];}
-    else {
-        return response.data;}
+
+    return response.data;
 }
+
 
 export async function updateProfile(profile, id) {
 
