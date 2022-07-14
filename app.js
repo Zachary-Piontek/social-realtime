@@ -16,7 +16,9 @@ async function handlePageLoad() {
     
     profile = await getProfile();
     checkProfile(profile);
+
     console.log(profile);
+
     
     messages = await getMessages();
 
