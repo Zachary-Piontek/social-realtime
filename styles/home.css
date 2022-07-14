@@ -9,10 +9,20 @@ main {
     grid-template-columns: 1fr;
 }
 
+#chat-image-box {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    max-height: 10vh;
+}
+
 #chat-container {
     display: grid;
     justify-content: center;
+    margin: 45px;
 }
+
 
 #chat-container li {
     display: grid;
@@ -51,9 +61,3 @@ form {
     display: grid;
 }
 
-#chat-image-box {
-    display: grid;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}

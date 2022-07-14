@@ -16,8 +16,6 @@ function Message({ message }) {
     
     return li;
 
-    li.append(p);
-
 }
 
 export function renderMessages(root) {
@@ -32,7 +30,6 @@ export function renderMessages(root) {
                 message
             });
 
-            const item = Message({ message });
 
             root.append(item);
         }
