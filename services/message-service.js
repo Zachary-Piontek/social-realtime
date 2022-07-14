@@ -20,9 +20,10 @@ export async function getMessages() {
         id,
         created_at,
         content,
+        profile_id,
         user:user-profiles(
-           id,
-           profile_name 
+            id,
+            profile_name
         )
         `)
         .order('created_at', { ascending: false });
@@ -31,8 +32,6 @@ export async function getMessages() {
 
     return response.data;
 }
-
-
 
 export async function getProfile() {
     const user = getUser();

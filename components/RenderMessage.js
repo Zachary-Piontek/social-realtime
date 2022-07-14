@@ -1,31 +1,26 @@
 function Message({ message }) {
-    console.log(message);
     const li = document.createElement('li');
     li.classList.add('message-container');
+    
+    const p1 = document.createElement('p');
+    p1.classList.add('profile-name-display');
+    p1.textContent = message.user.profile_name;
 
     const p = document.createElement('p');
     p.classList.add('message-content');
-    console.log(message.content);
     p.textContent = message.content;
 
 
-    const username = document.createElement('h3');
-    username.textContent = message.username;
+    li.append(p1, p);
 
-    li.append(p, username);
-    
     return li;
-
 }
 
 export function renderMessages(root) { 
     return ({ messages }) => {
-        console.log(messages);
         root.innerHTML = '';
 
         for (const message of messages) {
-
-            console.log(message);
             const item = Message({
                 message
             });
