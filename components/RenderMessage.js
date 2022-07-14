@@ -9,7 +9,7 @@ function Message({ message }) {
     const username = document.createElement('h3');
     username.textContent = message.username;
 
-    li.append(p, username, li);
+    li.append(p, username);
 }
 
 export function renderMessages(root) {
