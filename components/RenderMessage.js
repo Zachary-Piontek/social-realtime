@@ -18,7 +18,7 @@ function Message({ message }) {
 
 }
 
-export function renderMessages(root) {
+export function renderMessages(root) { 
     return ({ messages }) => {
         console.log(messages);
         root.innerHTML = '';
