@@ -6,7 +6,10 @@ function Message({ message }) {
     p.classList.add('message-content');
     p.textContent = message.content;
 
-    li.append(p);
+    const username = document.createElement('h3');
+    username.textContent = message.username;
+
+    li.append(p, username, li);
 }
 
 export function renderMessages(root) {
