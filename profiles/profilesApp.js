@@ -27,12 +27,14 @@ async function handleSignOut() {
 }
 
 async function handleProfileUpdate(username) {
-    const profile = {
-        id: user.id,
-        username,
+    console.log(profile);
+    const profileInput = {
+        id: profile.id,
+        profile_name: username,
+        user_id: user.id,
     };
 
-    await updateProfile(profile);
+    await updateProfile(profileInput);
     display();
 }
 
