@@ -1,11 +1,12 @@
 import { getUser } from './auth-service.js';
 import { client } from './client.js';
 
-export async function newMessage(text) {
+export async function newMessage(input, id) {
     const response = await client
         .from('messages')
-        .insert({
-            text
+        .upsert({
+            content: input,
+            profile_id: id
         })
         .single();
 
