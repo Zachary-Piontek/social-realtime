@@ -14,7 +14,7 @@ function Message({ message }) {
     return li;
 }
 
-export function renderMessages(root) {
+export function renderMessages(root) { 
     return ({ messages }) => {
         console.log(messages);
         root.innerHTML = '';
