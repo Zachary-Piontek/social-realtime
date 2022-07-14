@@ -14,8 +14,8 @@ async function handlePageLoad() {
     user = getUser();
     protectPage(user);
     
-    // profile = await getProfile();
-    // checkProfile(profile);
+    profile = await getProfile();
+    checkProfile(profile);
     
     messages = await getMessages();
 
