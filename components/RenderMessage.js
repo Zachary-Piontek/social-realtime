@@ -1,14 +1,15 @@
 function Message({ message }) {
-    console.log(message);
     const li = document.createElement('li');
     li.classList.add('message-container');
 
     const p = document.createElement('p');
     p.classList.add('message-content');
-    console.log(message.content);
     p.textContent = message.content;
 
-    li.append(p);
+    const p1 = document.createElement('p');
+    p1.textContent = message.user.profile_name;
+
+    li.append(p, p1);
 
     return li;
 }
@@ -19,7 +20,11 @@ export function renderMessages(root) {
         root.innerHTML = '';
 
         for (const message of messages) {
-            const item = Message({ message });
+            const item = Message({
+                message
+            });
+
+
             root.append(item);
         }
     };

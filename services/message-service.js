@@ -21,6 +21,10 @@ export async function getMessages() {
         created_at,
         content,
         profile_id,
+        user:user-profiles(
+            id,
+            profile_name
+        )
         `)
         .order('created_at', { ascending: false });
         //.limit(10) in case loading all messages causes a problem
@@ -28,7 +32,6 @@ export async function getMessages() {
 
     return response.data;
 }
-
 
 export async function getProfile() {
     const user = getUser();
