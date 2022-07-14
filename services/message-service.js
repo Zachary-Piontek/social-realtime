@@ -37,21 +37,21 @@ export async function getProfile() {
 
     const response = await client
         .from('user-profiles')
-        .select(`
-        id,
-        profile_name`)
+        .select(`*`)
         .eq('user_id', user.id)
         .single();
-
-    return response.data;
+    if (response.data === undefined) {
+        return [];}
+    else {
+        return response.data;}
 }
 
-export async function updateProfile(profile) {
-    console.log(profile);
+export async function updateProfile(profile, id) {
+
     const response = await client
         .from('user-profiles')
         .upsert(profile)
-        .eq('id', profile.id)
+        .eq('id', id)
         .single();
 
     return response.data;
