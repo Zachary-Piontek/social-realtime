@@ -21,6 +21,8 @@ async function handlePageLoad() {
 
     
     messages = await getMessages();
+    console.log(messages);
+    
 
     liveUpdate(mess => {
         messages.unshift(mess);
