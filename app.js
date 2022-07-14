@@ -3,7 +3,7 @@ import { checkProfile, protectPage } from './utils.js';
 import createUser from './components/User.js';
 import { getMessages, getProfile, newMessage } from './services/message-service.js';
 import { renderMessages } from './components/RenderMessage.js';
-import createNewMessage from './components/NewMessage.js';
+import { createNewMessage } from './components/NewMessage.js';
 // State
 let user = null;
 let profile = null;
@@ -14,8 +14,9 @@ async function handlePageLoad() {
     user = getUser();
     protectPage(user);
     
-    // profile = await getProfile();
-    // checkProfile(profile);
+    profile = await getProfile();
+    checkProfile(profile);
+    console.log(profile);
     
     messages = await getMessages();
 
@@ -27,7 +28,8 @@ async function handleSignOut() {
 }
 
 async function handleNewMessage(input) {
-    await newMessage(input);
+    console.log(input);
+    await newMessage(input, profile.id);
     display();
 }
 
@@ -47,8 +49,8 @@ const NewMessage = createNewMessage(
 
 function display() {
     User({ user });
-    NewMessage();
     Messages({ messages });
+    NewMessage();
 }
 
 handlePageLoad();
