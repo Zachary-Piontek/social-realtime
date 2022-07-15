@@ -36,6 +36,7 @@ async function handleProfileUpdate(username) {
 
     console.log(profileInput);
     await updateProfile([profileInput]);
+    location.replace('/');
     display();
 }
 
